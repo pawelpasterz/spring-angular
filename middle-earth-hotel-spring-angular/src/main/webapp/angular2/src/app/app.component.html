@@ -1,0 +1,267 @@
+<header id="intro" style="display: block;">
+  <article class="fullheight" style="height: 568px;">
+    <div class="hgroup">
+      <h1>Very Funny Hotel</h1>
+      <h2>Somewhere in middle earth</h2>
+      <p><a href="/#welcome"><img src="/assets/images/arrow.png" alt="down arrow"></a></p>
+    </div>
+  </article>
+
+  <div class="scrollmagic-pin-spacer"
+       style="display: block; top: auto; left: auto; bottom: auto; right: auto; position: relative; margin: 0 auto auto; box-sizing: content-box; width: 100%; min-height: 44px; height: auto; padding-top: 0; padding-bottom: 0;">
+    <nav id="nav"
+         style="position: relative; top: 0; left: 0; bottom: auto; right: auto; width: 100%;">
+      <div class="navbar">
+        <div class="brand"><a href="/#welcome">Very Funny <span>Hotel</span></a></div>
+      </div><!-- navbar -->
+    </nav>
+  </div>
+</header>
+<main id="wrapper">
+  <div class="scene" id="welcome">
+    <article class="content">
+      <div class="row">
+        <div class="col-12">
+          <div class="gallery">
+            <img src="../assets/images/intro_room.jpg" alt="Intro Gallery Room Sample Pictures">
+            <img src="../assets/images/intro_pool.jpg" alt="Intro Gallery Pool Sample Pictures">
+            <img src="../assets/images/intro_dining.jpg" alt="Intro Gallery Dining Sample Pictures">
+            <img src="../assets/images/intro_attractions.jpg"
+                 alt="Intro Gallery Attractions Sample Pictures">
+            <img class="hidesm" src="../assets/images/intro_wedding.jpg"
+                 alt="Intro Gallery Dining Sample Pictures">
+          </div>
+          <br>
+          <h1>Book a Room</h1>
+          <form class="form-horizontal" [formGroup]="roomsearch" (ngSubmit)="onSubmit(roomsearch)">
+            <div class="form-group">
+              <strong>
+                <label for="checkin" class="col-4">Check-In:</label>
+              </strong>
+              <div class="col-8">
+                <input id="checkin" type="date" class="form-control" formControlName="checkin">
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <strong>
+                <label for="checkout" class="col-4">Check-Out:</label>
+              </strong>
+              <div class="col-8">
+                <input id="checkout" type="date" class="form-control" formControlName="checkout">
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="col-offset-2 col-10">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <h1>Available Rooms</h1>
+      <div class="row" *ngIf="rooms">
+        <div class="col-12">
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+              <tr *ngFor="let room of rooms">
+                <td>
+                  <img src="../assets/images/intro_room.jpg"
+                       alt="Intro Gallery Room Sample Pictures">
+                </td>
+                <td>
+                  <strong>Room #: {{room.roomNumber}}</strong><br/>
+                  <strong>Price: ${{room.price}}</strong>
+                </td>
+                <td>
+                  <button type="submit" class="btn btn-primary" (click)="reserveRoom(room.id)">
+                    Reserve
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div><!-- welcome -->
+  <div class="scene" id="hotelinfo">
+    <article class="heading">
+      <h1>Essential Info</h1>
+    </article>
+    <article id="usefulinfo">
+      <section id="arrivalinfo">
+        <h2>Arrival Information</h2>
+        <ul>
+          <li><strong>Check-in:</strong> 3:00 PM</li>
+          <li><strong>Check-out:</strong> 11:00 AM</li>
+          <li><strong>Parking:</strong> Self-parking in the underground garage is $15 per day and
+            valet-parking is $50 per day. Your horse will be pleased.
+          </li>
+          <li><strong>Airport Shuttle:</strong> Our complimentary airport shuttles leave every hour
+            on the hour, and
+            make trips to Osgiliath and Isengard airports.
+          </li>
+          <li><strong>Trains:</strong> The nearest Underground station is at Rohan Square.</li>
+          <li><strong>Pet Policy:</strong> Pets of all sizes and types are allowed in designated pet
+            rooms, and the
+            specified common areas. Service animals are allowed everywhere.
+          </li>
+        </ul>
+      </section>
+      <section class="checklist" id="services">
+        <h2>Services and Amenities</h2>
+        <p>Our services and amenities are designed to make your travel easy, your stay comfortable,
+          and your experience
+          one-of-a-kind.</p>
+        <ul>
+          <li>Indoor pool</li>
+          <li>24-hour fitness center</li>
+          <li>Massage therapy</li>
+          <li>Full service spa</li>
+          <li>In-room jacuzzi tubs</li>
+          <li>Rooftop café &amp; smoothie bar</li>
+          <li>Coffee bar &amp; pastry shop</li>
+          <li>Traditional continental breakfast</li>
+          <li>24-hour concierge service</li>
+          <li>Business center</li>
+          <li>Complimentary wireless service</li>
+          <li>Laundry &amp; dry cleaning service</li>
+          <li>Daily paper</li>
+          <li>Certified "green" hotel</li>
+          <li>Pet-friendly rooms &amp; common areas</li>
+        </ul>
+      </section>
+      <section class="checklist" id="accessibility">
+        <h2>Accessibility</h2>
+        <p>We're committed to maintaining the same quality of service for every individual. We offer
+          the following
+          facilities for those with special needs:</p>
+        <ul>
+          <li>Grab bars on tub walls</li>
+          <li>Shower chairs</li>
+          <li>Hand held shower sprayers</li>
+          <li>Higher toilets &amp; toilet modifiers</li>
+          <li>Lower sink faucet handles</li>
+          <li>Wheelchair clearance under sinks &amp; vanity</li>
+          <li>Lower racks in closet</li>
+          <li>TDD machines</li>
+          <li>Telephone light signalers &amp; smoke alarms</li>
+          <li>Telephone amplification handsets</li>
+          <li>Closed captioned television converters</li>
+          <li>Vibrating alarm clocks</li>
+          <li>Telephones with volume control</li>
+        </ul>
+      </section>
+    </article>
+    <article id="greenprogram">
+      <h2>Cool Funy Great Program</h2>
+      <p><strong>Very Funny Hotel</strong> Lorem ipsum dolor sit amet, in sint recteque
+        vis, no nec quot atqui exerci. Admodum tincidunt pro cu. Fabulas scribentur definitiones eam
+        eu, mutat iriure posidonium cum id. Sea exerci option cu, mel erat ancillae ne. Mentitum
+        disputationi nam ne.
+
+        Eu ius iusto laboramus. Vis saepe aliquid partiendo ea, vix ei posse singulis interpretaris.
+        Velit oportere ea sed, sed animal feugiat adversarium cu, mnesarchum inciderint et mei. Ei
+        mei justo minim delicatissimi, duo te scripta reprehendunt, qui autem primis ea.
+
+        Mei ut rebum ornatus. In eos stet quas civibus. Augue moderatius sea id, facete argumentum
+        et vim. In vel error dicunt. Ea vis clita iudico.
+
+        Nec semper explicari eu, quo at commune expetendis percipitur, summo placerat in nam. Ad
+        quidam postulant pro, cu decore populo volumus qui. Atqui volumus concludaturque in nam,
+        unum fuisset nominavi te vel. Magna sanctus dolores ad quo, docendi periculis ea eum. In
+        duis oporteat recteque sed. Luptatum persecuti no nec, usu alterum deserunt reprehendunt in,
+        at eum sint minimum.
+
+        Regione repudiandae te vis, has id simul eripuit pericula, est facer omittantur adversarium
+        id. An duo verear ornatus, cum no tantas ubique expetenda. Mel vidisse tacimates scripserit
+        et. Viris urbanitas mel ne, ad tation diceret quo, id vis nibh fuisset.</p>
+    </article>
+  </div><!-- hotelinfo -->
+
+  <div class="scene" id="dining">
+    <article id="areadining">
+      <h1>Dining in the Area</h1>
+      <p>Lorem ipsum dolor sit amet, in sint recteque vis, no nec quot atqui exerci. Admodum
+        tincidunt pro cu. Fabulas scribentur definitiones eam eu, mutat iriure posidonium cum id.
+        Sea exerci option cu, mel erat ancillae ne. Mentitum disputationi nam ne.
+
+        Eu ius iusto laboramus. Vis saepe aliquid partiendo ea, vix ei posse singulis interpretaris.
+        Velit oportere ea sed, sed animal feugiat adversarium cu, mnesarchum inciderint et mei. Ei
+        mei justo minim delicatissimi, duo te scripta reprehendunt, qui autem primis ea.
+
+        Mei ut rebum ornatus. In eos stet quas civibus. Augue moderatius sea id, facete argumentum
+        et vim. In vel error dicunt. Ea vis clita iudico.</p>
+    </article>
+    <article id="inhotel">
+      <section id="rooftopcafe">
+        <h2>Rooftop Café</h2>
+        <img src="../assets/images/dining_rooftop.jpg" alt="Dining">
+        <p>Lorem ipsum dolor sit amet, in sint recteque vis, no nec quot atqui exerci. Admodum
+          tincidunt pro cu. Fabulas scribentur definitiones eam eu, mutat iriure posidonium cum id.
+          Sea exerci option cu, mel erat ancillae ne. Mentitum disputationi nam ne.
+
+          Eu ius iusto laboramus. Vis saepe aliquid partiendo ea, vix ei posse singulis
+          interpretaris. Velit oportere ea sed, sed animal feugiat adversarium cu, mnesarchum
+          inciderint et mei. Ei mei justo minim delicatissimi, duo te scripta reprehendunt, qui
+          autem primis ea.</p>
+      </section>
+
+      <section id="smoothiebar">
+        <h2>Smoothie Bar</h2>
+        <img src="../assets/images/dining_smoothiebar.jpg" alt="Dining">
+        <p>Lorem ipsum dolor sit amet, in sint recteque vis, no nec quot atqui exerci. Admodum
+          tincidunt pro cu. Fabulas scribentur definitiones eam eu, mutat iriure posidonium cum id.
+          Sea exerci option cu, mel erat ancillae ne. Mentitum disputationi nam ne.
+
+          Eu ius iusto laboramus. Vis saepe aliquid partiendo ea, vix ei posse singulis
+          interpretaris. Velit oportere ea sed, sed animal feugiat adversarium cu, mnesarchum
+          inciderint et mei. Ei mei justo minim delicatissimi, duo te scripta reprehendunt, qui
+          autem primis ea.
+
+          Mei ut rebum ornatus. In eos stet quas civibus. Augue moderatius sea id, facete argumentum
+          et vim. In vel error dicunt. Ea vis clita iudico.</p>
+      </section>
+
+      <section id="coffeebar">
+        <h2>Breakfast &amp; Coffee Bar</h2>
+        <img src="../assets/images/dining_lattes.jpg" alt="Dining">
+        <p>Lorem ipsum dolor sit amet, in sint recteque vis, no nec quot atqui exerci. Admodum
+          tincidunt pro cu. Fabulas scribentur definitiones eam eu, mutat iriure posidonium cum id.
+          Sea exerci option cu, mel erat ancillae ne. Mentitum disputationi nam ne.
+
+          Eu ius iusto laboramus. Vis saepe aliquid partiendo ea, vix ei posse singulis
+          interpretaris.</p>
+      </section>
+    </article><!-- inhotel -->
+    <article id="roomservice">
+      <h1>Room Service</h1>
+      <p>Lorem ipsum dolor sit amet, in sint recteque vis, no nec quot atqui exerci. Admodum
+        tincidunt pro cu. Fabulas scribentur definitiones eam eu, mutat iriure posidonium cum id.
+        Sea exerci option cu, mel erat ancillae ne. Mentitum disputationi nam ne.</p>
+    </article>
+  </div><!-- dining -->
+
+</main>
+<footer class="scene">
+  <article class="content">
+    <div id="socialmedia">
+      <ul class="group">
+        <li><a href="https://twitter.com/"><img class="icon" src="../assets/images/twitter.png"
+                                                alt="icon for twitter"></a></li>
+        <li><a href="http://www.facebook.com/"><img class="icon" src="../assets/images/facebook.png"
+                                                    alt="icon for facebook"></a></li>
+        <li><a href="http://www.youtube.com/"><img class="icon" src="../assets/images/youtube.png"
+                                                   alt="icon for youtube"></a>
+        </li>
+      </ul>
+    </div>
+  </article>
+</footer>
+<script src="../assets/images/script.js"></script>
