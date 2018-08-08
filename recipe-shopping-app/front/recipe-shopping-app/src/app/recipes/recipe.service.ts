@@ -13,7 +13,7 @@ export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
       'Big Fat Burger', 'Just test bro',
-      'assets/default_recipe.jpg',
+      'assets/burger.jpg',
       [
         new Ingredient('Meat', 1),
         new Ingredient('French Fries', 20)
@@ -21,7 +21,7 @@ export class RecipeService {
     ),
     new Recipe(
       'Something chinese', 'Just test bro and bla bla bla',
-      'assets/default_recipe.jpg',
+      'assets/chinese.jpg',
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 1)
@@ -35,6 +35,10 @@ export class RecipeService {
 
   public getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  public getRecipe(index: number): Recipe {
+    return this.recipes[index + 1];
   }
 
   public addIngredientsToShoppingList(ingredients: Ingredient[]): void {
