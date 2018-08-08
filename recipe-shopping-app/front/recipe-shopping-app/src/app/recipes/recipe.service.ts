@@ -32,13 +32,12 @@ export class RecipeService {
   constructor(private shoppingListService: ShoppingListService) {
   }
 
-
   public getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 
   public getRecipe(index: number): Recipe {
-    return this.recipes[index + 1];
+    return this.recipes[index];
   }
 
   public addIngredientsToShoppingList(ingredients: Ingredient[]): void {
