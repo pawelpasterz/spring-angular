@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dataStorage: DataStorageService) {
+  constructor(private dataStorage: DataStorageService,
+              private authService: AuthService) {
   }
 
   public onSaveData(): void {
@@ -20,5 +22,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  public isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  public closeSession(): void {
+    this.authService.logout();
   }
 }
