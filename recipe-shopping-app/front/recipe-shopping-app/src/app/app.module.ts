@@ -10,21 +10,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataStorageService } from './shared/data-storage.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuardService } from './auth/auth-guard.service';
-import { RecipeModule } from './recipes/recipe.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingModule } from './shopping-list/shopping.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipeModule,
     SharedModule,
     ShoppingModule,
     AuthModule
