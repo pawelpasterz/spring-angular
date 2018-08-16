@@ -103,4 +103,8 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
+  public getIngredientsFormArray(): FormArray {
+    return <FormArray>this.recipeForm.get('ingredients');
+  }
 }

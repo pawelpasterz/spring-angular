@@ -8,12 +8,6 @@ import * as firebase from 'firebase';
 })
 export class AppComponent implements OnInit {
 
-  loadedFeature = 'recipe';
-
-  onNavigate(feture: string) {
-    this.loadedFeature = feture;
-  }
-
   ngOnInit(): void {
     firebase.initializeApp({
       apiKey: 'AIzaSyDdDo0iqFW3G9mHbOfUy5id9c04N7Jf86o',
