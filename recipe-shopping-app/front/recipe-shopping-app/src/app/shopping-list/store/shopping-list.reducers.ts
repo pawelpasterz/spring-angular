@@ -61,9 +61,7 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
       };
     }
     case ShoppingListActions.START_EDIT: {
-      console.log(action);
       const editedIngredient = {...state.ingredients[action.payload]};
-      console.log(editedIngredient);
       return {
         ...state,
         editedIngredient: editedIngredient,
