@@ -32,14 +32,14 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
-    "acorn": "^5.7.4"
+    "acorn": "^5.7.4",
     "bootstrap": "4.4.1",
     "codelyzer": "~4.2.1",
     "firebase": "^5.3.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "jquery": "^3.5.0",
-    "https-proxy-agent": "^2.2.3"
+    "https-proxy-agent": "^2.2.3",
     "karma": "~1.7.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.0",
